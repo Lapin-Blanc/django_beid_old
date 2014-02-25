@@ -36,7 +36,7 @@ class Personne(models.Model):
     code_postal = models.CharField("Code postal", max_length=6, blank=True)
     commune = models.CharField(max_length=100, blank=True)
     
-    photo = models.TextField("Photo")
+    photo = models.TextField("Photo", blank=True)
 
     telephone = models.CharField("Numéro de téléphone (fixe)", max_length=20, blank=True)
     mobile = models.CharField("Numéro de téléphone (mobile)", max_length=20, blank=True)
