@@ -38,12 +38,16 @@ class Personne(models.Model):
     
     photo = models.TextField("Photo")
 
+    telephone = models.CharField("Numéro de téléphone (fixe)", max_length=20, blank=True)
+    mobile = models.CharField("Numéro de téléphone (mobile)", max_length=20, blank=True)
+    mail = models.EmailField("Adresse mail", max_length=254, blank=True)
+    
     class Meta:
         ordering = ['nom', 'prenoms']
 
 
     def __unicode__(self):
-        return u"%s %s" % (self.prenoms, self.nom)
+        return u"%s %s %s" % (self.num_nat, self.prenoms, self.nom)
     
     def card_is_valid(self):
         if self.fin_val:
