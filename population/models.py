@@ -47,7 +47,7 @@ class Personne(models.Model):
 
 
     def __unicode__(self):
-        return u"%s %s %s" % (self.num_nat, self.prenoms, self.nom)
+        return u"%s %s (%s)" % (self.nom, self.prenoms, self.date_naissance)
     
     def card_is_valid(self):
         if self.fin_val:
